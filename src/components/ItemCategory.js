@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import React from 'react'
+import React, { useState } from 'react'
 import Lottie from "react-lottie";
-import { useState } from 'react/cjs/react.development';
 
 const ItemCategory = ({ title, image }) => {
     const [autoloop, setAutoloop] = useState(false)
