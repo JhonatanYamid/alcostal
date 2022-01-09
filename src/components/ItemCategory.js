@@ -1,20 +1,13 @@
 import Link from 'next/link';
 import React, { useState } from 'react'
-import Lottie from "react-lottie";
 
 const ItemCategory = ({ title, image }) => {
     const [autoloop, setAutoloop] = useState(false)
     React.useEffect(() => {
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             setAutoloop(true)
-        } 
+        }
     }, [])
-
-
-
-
-
-    var path = `/images/${image}.png`
     React.useEffect(() => {
         import("lottie-interactive/dist/lottie-interactive.js");
     }, []);
@@ -31,7 +24,6 @@ const ItemCategory = ({ title, image }) => {
                     />
                     <h2 className='font-semibold text-teal-600 text-center drop-shadow-lg'>{title}</h2>
                 </div>
-
             </a>
         </Link>
     );

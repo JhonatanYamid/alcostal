@@ -1,16 +1,19 @@
 import React from 'react'
 
 const Section2 = () => {
+
+    React.useEffect(() => {
+        import("lottie-interactive/dist/lottie-interactive.js");
+    }, []);
     return (
         <div
             className="backgroundSection md:h-screen bg-[url('/images/bg-section2.png')]"
         >
             <div className=' md:w-1/2 md:h-1/2 px-5 md:px-0 pt-20 md:pt-0'>
-                <img
-                    src="/images/network-farm.png"
-                    alt="character-jumbotron"
-                    width={500}
-                    height={300}
+                <lottie-interactive
+                    autoplay
+                    loop
+                    path="/lottieFiles/network-alcostal.json"
                 />
             </div>
             <div className="w-full md:h-1/2 md:w-1/2 break-words px-10 md:px-20 text-yellow-800 text-center md:text-left">
