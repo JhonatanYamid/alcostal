@@ -17,13 +17,7 @@ const Jumbotron = () => {
                 <p className='text-xl'>Empecemos buscando un producto fresco y recién sacadito de la tierra, aquí abajo</p>
                 <SearchInput />
             </div>
-            <div className='md:w-1/2 md:h-1/2 px-5 md:px-0 md:-ml-32 pt-20 md:pt-0'>
-                {/* <img
-                    src="/images/character-jumbotron.png"
-                    alt="character-jumbotron"
-                    width={500}
-                    height={300}
-                /> */}
+            <div className='md:w-1/2 md:h-1/2 px-5 md:px-0 pt-20 md:pt-0'>
                 <lottie-interactive
                     autoplay
                     loop
