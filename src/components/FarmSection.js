@@ -1,0 +1,39 @@
+import React from 'react'
+import FarmItem from './FarmItem';
+
+const FarmSection = ({ titleSection }) => {
+    return (
+        <div className="px-5 md:px-20">
+            <h3
+                className='text-2xl font-bold mb-5 md:ml-6 text-teal-800'>
+                {titleSection}
+            </h3>
+            <div className='flex flex-row flex-wrap justify-center'>
+                <FarmItem 
+                title = "Cristalina"
+                description = "Finca ganadera con amplio reconocimiento"
+                  />
+                <FarmItem 
+                title = "Cristalina"
+                description = "Finca ganadera con amplio reconocimiento"
+                  />
+                <FarmItem 
+                title = "Cristalina"
+                description = "Finca ganadera con amplio reconocimiento"
+                  />
+                <FarmItem 
+                title = "Cristalina"
+                description = "Finca ganadera con amplio reconocimiento"
+                  />
+            </div>
+        </div>
+
+
+
+
+
+
+    );
+}
+
+export default FarmSection;

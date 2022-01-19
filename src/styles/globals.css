@@ -2,7 +2,10 @@
 @tailwind components;
 
 .button-primary {
-  @apply inline-block text-sm px-4 py-2 shadow-md leading-none text-white bg-teal-500 border-white hover:border-transparent hover:text-white hover:bg-teal-400 mt-4 lg:mt-0 font-semibold;
+  @apply rounded inline-block text-sm px-4 py-2 shadow-md leading-none text-white bg-teal-500 border-white hover:border-transparent hover:text-white hover:bg-teal-400 mt-4 lg:mt-0 font-semibold;
+}
+.button-success {
+  @apply rounded inline-block text-sm px-4 py-2 shadow-md leading-none text-white bg-green-600 border-white hover:border-transparent hover:text-white hover:bg-teal-400 mt-4 lg:mt-0 font-semibold;
 }
 
 /* Navbar */
@@ -15,12 +18,7 @@
 .navbar-inactive {
   @apply text-white md:text-slate-600 py-5;
 }
-.navbar-inactive a {
-  @apply hover:text-teal-600;
-}
-.navbar-active a {
-  @apply hover:text-teal-800;
-}
+
 .navbar-active img {
   @apply brightness-0 invert;
 }

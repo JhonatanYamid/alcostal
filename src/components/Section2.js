@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Section2 = () => {
-
     React.useEffect(() => {
         import("lottie-interactive/dist/lottie-interactive.js");
     }, []);
@@ -13,6 +12,7 @@ const Section2 = () => {
                 <lottie-interactive
                     autoplay
                     loop
+                    interaction="play-on-show"
                     path="/lottieFiles/network-alcostal.json"
                 />
             </div>

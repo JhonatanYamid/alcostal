@@ -6,14 +6,12 @@ import Section3 from "../components/Section3";
 
 export default function Home() {
   return (
-    <div className="">
-      <Layout>
+    <Layout>
         <Jumbotron />
         <Section1 />
         <Section2 />
         <Section3 />
       </Layout>
-    </div>
 
   )
 }
