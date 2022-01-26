@@ -1,6 +1,6 @@
 import ProductItem from "./ProductItem";
 
-const Featured = ({ titleSection }) => {
+const Featured = ({ titleSection, products }) => {
     return (
         <div className="px-5 md:px-20">
             <h3
@@ -8,34 +8,17 @@ const Featured = ({ titleSection }) => {
                 {titleSection}
             </h3>
             <div className='flex flex-row flex-wrap justify-center'>
-                <ProductItem
-                    title="Zanahoria"
-                    description="Es de la finca de Julio..."
-                    price="30000"
-                    category = "Vegetales"
-                    image = "zanahoria.jpg"
-                />
-                <ProductItem
-                    title="Leche"
-                    description="Es de la finca Pacho..."
-                    price="5000"
-                    category = "Lacteos"
-                    image = "leche.jpg"
-                />
-                <ProductItem
-                    title="Papa"
-                    description="Es de la finca Oscar..."
-                    price="10000"
-                    category = "Verduras"
-                    image = "papa.jpg"
-                />
-                <ProductItem
-                    title="Pescado"
-                    description="Es de la finca de Julio..."
-                    price="200000"
-                    category = "Animales"
-                    image = "pescado.jpg"
-                />
+                {products.map(product => (
+                    <ProductItem
+                        key={product.id}
+                        title={product.name}
+                        description={product.description}
+                        price={product.price}
+                        category={product.category.name}
+                        discount={product.discount}
+                        image="https://lh3.googleusercontent.com/fife/AAWUweUI-HRlr1oGoHElp9_dg1OqqDB697oGaDK3KQv4YL7rFJZJC72o6E3T8v2UBfnqZdHizChjji1nx0SG6-ilZLO2VVU03TNa9WF-YApPAj_V0ZWb4aPWyVJnoABgTZjZCrcb5YQDd5oFy-Tjr9RIkc6czoh6IGUPawIbNcGG0rYMfL2jjS9XMh_237QIKUqRCuaawVjlsPI3QZ5ThMJPNPtPA3Ct9jarWnmIgKJ4NMDR0F5oYLFUixuSPoNYCz_YX4bYmXaRBQXvlxSfIkzM3rgz1RDgic4sKaSTXfTI-B3o76tmUqD2fk5Eh5lhdpoUTn85p9qvZ1QcAzhgJn30JyUtRlXqPhR-avvd5mhJ9bdDYy1Y3t4h7d7zCl5ApeSZ1VAXWx7XeRQv5f8BII61hcDJRfSOB2TprZlgjl7lxtB_6SrarE8JNDj3T4lW-77lIqCV5N2LAu0IwBqfRUDCxfEF1V2-LQGsOR8mHXLqxwHOLL9SkrWxKILYWBjyQY4JLHXu08Qk8sz53x1gnVoYoHug66pdTR7GYfwDQh1escrVUcWMU05xGg22UfZBLpKqu2_o5Q4d43zdpfFOQUoFwpXFGxsLusZXVaigGNq9xOwCfF5NXCCOfxJmE9HyFQBDQD3KCxFh9g-uJvC2jFkiEwPisp7aY90pJ_LPq82Z_HmTlt4q5kqXea5lGEBN67fQobRStdw3R_ileerGCZfV_kS4HCvnl_Mc9Q=w1922-h873-ft"
+                    />
+                ))}
             </div>
         </div>
     );

@@ -1,33 +1,33 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const ProductItem = ({title, description, price, category, image}) => {
+const ProductItem = ({title, description, price, category, image, discount}) => {
     return (
-        <Link href="/">
-            <a href="" className="w-1/2 md:w-[22%] md:mx-3 ">
+            <a className="w-1/2 md:w-[22%] md:mx-3 ">
                 <div className="bg-white md:rounded-xl md:shadow-xl mb-3 border-4 border-slate-100 md:border-none pb-7">
                     <div className="relative">
                         <div className="max-h-60 w-24 h-24 ">
-                            <Image src={"/images/" + image} className="md:rounded-t-xl" layout="fill" objectFit="cover" alt="producto" />
+                            <Image src={image} className="md:rounded-t-xl" layout="fill" objectFit="cover" alt="producto" />
                         </div>
-                        <div className="bottom-0 right-0 mb-2 mr-2 px-2 rounded-lg absolute bg-yellow-500 text-gray-100 text-xs font-medium">Recomendado</div>
+                        {(discount != 0) ? <div className="bottom-0 right-0 mb-2 mr-2 px-2 rounded-lg absolute bg-yellow-500 text-gray-100 text-sm font-medium">Descuento {discount}%</div> : false}
+                        
                     </div>
-                    <div className="px-2 py-1">
-                        <div className="flex flex-row items-center">
-                            <div className="text-md font-bold py-2 px-3 text-gray-700">{title}</div>
-                            <div className="bg-gray-200 px-2 md:ml-7 h-5 flex items-center rounded-full text-[0.5rem] font-medium text-gray-600">
+                    <div className="px-2 ">
+                        <div className="flex flex-row items-center justify-between m-1">
+                            <div className="text-xl font-bold py-2 px-3 text-gray-700">{title}</div>
+                            <div className="bg-gray-200 px-2 h-5 flex items-center rounded-full text-[0.5rem] font-medium text-gray-600">
                                 {category}
                             </div>
                         </div>
-                        <p className="pb-2 px-3 text-xs font-medium text-gray-500">{description}</p>
-                        <div className="flex flex-col md:flex-row py-5">
-                            <h3 className="md:pl-3 text-xl md:text-lg font-bold text-teal-500 text-center mb-4 md:mb-0">${price}</h3>
-                            <div className="text-teal-500 flex flex-row items-center justify-center rounded-full shadow-lg h-7 py-7 md:py-0 px-1 mx-4">
-                                <svg className="h-10 md:h-5" viewBox="0 0 20 20" fill="currentColor">
+                        <p className="pb-2 px-4 text-sm font-medium text-gray-500 text-ellipsis overflow-hidden whitespace-nowrap">{description}</p>
+                        <div className="flex flex-col justify-between items-center md:flex-row py-5">
+                            <h3 className="md:pl-3 text-xl md:text-2xl font-bold text-teal-500 text-center mb-4 md:mb-0">${price}</h3>
+                            <div className="text-teal-500 flex flex-row items-center justify-center rounded-full shadow-lg h-10 py-7 md:py-0 px-1 mx-4">
+                                <svg className="h-10 cursor-pointer" viewBox="0 0 20 20" fill="currentColor">
                                     <path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" />
                                 </svg>
-                                <h3 className="px-1 text-lg md:text-sm font-bold text-slate-700">10</h3>
-                                <svg className="h-10 md:h-5" viewBox="0 0 20 20" fill="currentColor">
+                                <h3 className="px-1 text-lg md:text-xl font-bold text-slate-700">10</h3>
+                                <svg className="h-10 cursor-pointer" viewBox="0 0 20 20" fill="currentColor">
                                     <path d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" />
                                 </svg>
                             </div>
@@ -35,7 +35,7 @@ const ProductItem = ({title, description, price, category, image}) => {
 
 
                         <Link href="/">
-                            <a href="#" className="flex flex-row justify-center items-center mx-4 px-4 py-2 rounded-full bg-teal-500 hover:bg-teal-600 text-white">
+                            <a className="flex flex-row justify-center items-center mx-4 px-4 py-2 rounded-full bg-teal-500 hover:bg-teal-600 text-white">
                                 <svg
                                     className="fill-current"
                                     width="22" height="22" viewBox="0 0 638.000000 743.000000"
@@ -52,7 +52,6 @@ const ProductItem = ({title, description, price, category, image}) => {
                     </div>
                 </div>
             </a>
-        </Link>
     );
 }
 

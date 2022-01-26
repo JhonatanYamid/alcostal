@@ -4,14 +4,14 @@ import Section1 from "../components/Section1";
 import Section2 from "../components/Section2";
 import Section3 from "../components/Section3";
 
-export default function Home() {
+export default function Home({ data }) {
   return (
-    <Layout>
-        <Jumbotron />
-        <Section1 />
-        <Section2 />
-        <Section3 />
-      </Layout>
+    <Layout>      
+      <Jumbotron />
+      <Section1 />
+      <Section2 />
+      <Section3 />
+    </Layout>
 
   )
 }
