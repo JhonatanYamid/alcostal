@@ -40,5 +40,8 @@
 .section-icons {
   @apply flex justify-center pb-5;
 }
+.flex-row-center{
+  @apply flex flex-row items-center justify-between
+}
 
 @tailwind utilities;

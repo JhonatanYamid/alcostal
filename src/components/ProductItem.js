@@ -1,57 +1,45 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const ProductItem = ({title, description, price, category, image, discount}) => {
+const ProductItem = ({ id, title, description, price, category, image, discount }) => {
+    price = new Intl.NumberFormat().format(price);
     return (
-            <a className="w-1/2 md:w-[22%] md:mx-3 ">
-                <div className="bg-white md:rounded-xl md:shadow-xl mb-3 border-4 border-slate-100 md:border-none pb-7">
-                    <div className="relative">
-                        <div className="max-h-60 w-24 h-24 ">
-                            <Image src={image} className="md:rounded-t-xl" layout="fill" objectFit="cover" alt="producto" />
-                        </div>
-                        {(discount != 0) ? <div className="bottom-0 right-0 mb-2 mr-2 px-2 rounded-lg absolute bg-yellow-500 text-gray-100 text-sm font-medium">Descuento {discount}%</div> : false}
-                        
+        <Link href={`/products/${id}`}>
+            <a className="w-[49%] md:w-[24%] rounded-xl shadow-xl overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap">
+                {/* Image and discount*/}
+                <div className="relative">
+                    <div className="max-h-60 w-28 h-28 ">
+                        <Image src={image} layout="fill" objectFit="cover" alt="producto" />
                     </div>
-                    <div className="px-2 ">
-                        <div className="flex flex-row items-center justify-between m-1">
-                            <div className="text-xl font-bold py-2 px-3 text-gray-700">{title}</div>
-                            <div className="bg-gray-200 px-2 h-5 flex items-center rounded-full text-[0.5rem] font-medium text-gray-600">
-                                {category}
-                            </div>
+                    {discount != 0 &&
+                        <div className="bottom-0 right-0 mb-2 mr-2 px-2 rounded-lg absolute bg-yellow-500 text-gray-100 text-sm font-medium">
+                            Descuento {discount}%
                         </div>
-                        <p className="pb-2 px-4 text-sm font-medium text-gray-500 text-ellipsis overflow-hidden whitespace-nowrap">{description}</p>
-                        <div className="flex flex-col justify-between items-center md:flex-row py-5">
-                            <h3 className="md:pl-3 text-xl md:text-2xl font-bold text-teal-500 text-center mb-4 md:mb-0">${price}</h3>
-                            <div className="text-teal-500 flex flex-row items-center justify-center rounded-full shadow-lg h-10 py-7 md:py-0 px-1 mx-4">
-                                <svg className="h-10 cursor-pointer" viewBox="0 0 20 20" fill="currentColor">
-                                    <path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" />
-                                </svg>
-                                <h3 className="px-1 text-lg md:text-xl font-bold text-slate-700">10</h3>
-                                <svg className="h-10 cursor-pointer" viewBox="0 0 20 20" fill="currentColor">
-                                    <path d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" />
-                                </svg>
-                            </div>
+                    }
+                </div>
+                {/* Title description and category */}
+                <div className="px-5">
+                    <div className="flex justify-between py-3">
+                        <div className="text-sm md:text-md font-bold whitespace-normal break-words w-2/3">
+                            {title}
                         </div>
-
-
-                        <Link href="/">
-                            <a className="flex flex-row justify-center items-center mx-4 px-4 py-2 rounded-full bg-teal-500 hover:bg-teal-600 text-white">
-                                <svg
-                                    className="fill-current"
-                                    width="22" height="22" viewBox="0 0 638.000000 743.000000"
-                                    preserveAspectRatio="xMidYMid meet">
-                                    <g transform="translate(0.000000,743.000000) scale(0.100000,-0.100000)"
-                                        stroke="none">
-                                        <path d="M3018 7411 c-215 -47 -362 -167 -383 -313 -4 -26 -13 -49 -20 -52 -8 -3 -33 9 -57 25 -109 77 -158 105 -223 130 -378 147 -778 7 -811 -283 -8 -71 21 -172 68 -240 30 -41 375 -421 581 -636 l79 -84 112 31 c234 63 428 90 716 98 343 9 641 -23 924 -102 l129 -35 82 87 c45 49 193 212 330 363 291 322 310 352 310 485 0 66 -5 90 -27 137 -45 97 -131 165 -263 210 -100 33 -313 33 -428 0 -93 -27 -204 -80 -272 -132 -61 -46 -88 -55 -104 -36 -7 8 -10 19 -7 24 3 5 -1 33 -10 62 -31 104 -160 203 -326 250 -107 31 -286 36 -400 11z" />
-                                        <path d="M2656 5769 c-370 -99 -685 -291 -930 -568 -372 -420 -843 -1136 -1151 -1751 -668 -1335 -752 -2417 -230 -2969 207 -219 498 -355 890 -416 165 -26 573 -32 790 -11 156 15 245 15 1105 1 693 -11 988 -20 1140 -33 242 -20 659 -23 800 -4 661 87 1059 367 1224 863 119 358 114 772 -15 1299 -218 890 -803 1982 -1571 2932 -131 162 -201 224 -424 374 -159 107 -347 201 -513 253 -121 39 -221 65 -226 59 -1 -2 92 -113 208 -248 115 -135 218 -258 228 -275 23 -36 24 -76 4 -115 -22 -42 -53 -60 -107 -60 -38 0 -53 5 -77 28 -16 15 -133 150 -260 300 l-231 273 0 -166 c0 -209 -3 -217 -102 -248 -27 -9 -83 11 -109 39 -23 25 -24 32 -29 214 l-5 188 -250 -295 c-137 -162 -261 -304 -274 -314 -29 -23 -90 -25 -130 -4 -16 8 -36 31 -46 51 -30 64 -15 90 207 352 110 130 210 247 221 260 l20 22 -24 -1 c-13 0 -73 -14 -133 -30z" />
-                                    </g>
-                                </svg>
-                                <h3 className='font-bold text-xs md:text-sm pl-1'>Al costal</h3>
-                            </a>
-                        </Link>
+                        <div className="flex items-center justify-center w-auto h-auto bg-gray-200 text-[0.5rem] font-medium text-gray-600 rounded-full px-2 ">
+                            {category}
+                        </div>
+                    </div>
+                    <p className="text-xs font-medium text-gray-500 text-ellipsis overflow-hidden whitespace-nowrap">
+                        {description}
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem possimus totam a voluptatum consectetur iusto doloribus ipsam, voluptatem neque aspernatur, iure laborum tempore ipsa nesciunt inventore accusantium eaque quos temporibus.
+                    </p>
+                    <div className="flex flex-row items-center justify-between">
+                        <h3 className="text-xl font-bold text-teal-500 py-5">${price}</h3>
+                        <svg className="h-8 w-8 text-teal-600" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
                     </div>
                 </div>
             </a>
+        </Link >
     );
 }
 

@@ -15,7 +15,7 @@ const Shop = ({ products, farms, categories }) => {
                 <Categories categories={categories}/>
                 <br /><br />
                 <FarmSection farms= {farms} titleSection={"Fincas Cercanas"} />
-                <br />
+                <br /><br />
                 <Featured products={products} titleSection="Te puede interesar" />
                 <br />
                 {/* <Featured titleSection = "Destacados"/> */}
@@ -38,6 +38,9 @@ export async function getStaticProps() {
                 discount,
                 category{
                     name
+                }
+                imageProducts{
+                    url
                 }
             }
         }
