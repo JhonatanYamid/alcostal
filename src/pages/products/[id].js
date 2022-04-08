@@ -4,7 +4,7 @@ import Link from "next/link";
 import client from "../../../apollo-client";
 import Layout from "../../components/layout/Layout";
 
-const Product = ({ products }) => {
+const Product = ({ products=null }) => {
     const product = products[0];
     const price = new Intl.NumberFormat().format(product.price);
     return (
