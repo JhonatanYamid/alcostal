@@ -1,9 +1,6 @@
 import Link from 'next/link';
+
 const LoginForm = () => {
-    const login = e => {
-        e.preventDefault();
-        console.log('hola mund')
-    }
     return (
         <>
             <h1 className="text-4xl font-semibold ">Hola!</h1>
@@ -13,12 +10,13 @@ const LoginForm = () => {
                 <input type="password" placeholder="Contraseña" name="password" className='input-field' />
                 <button className="button-primary" type="submit">Ingresar</button>
             </form>
-            
-            <div className='flex flex-col text-sm font-normal  justify-center items-center'>
+            <div className='flex flex-col text-sm font-normal justify-center items-center'>
                 <p>¿Primera vez en AlCostal?</p>
-                <p ><Link href='/register' >
-                    <a className='underline font-semibold'>Crea una cuenta</a>
-                </Link></p>
+                <p >
+                    <Link href='/register' >
+                        <a href="#" className='underline font-semibold'>Crea una cuenta</a>
+                    </Link>
+                </p>
             </div>
         </>
     );
