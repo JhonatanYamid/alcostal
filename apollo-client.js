@@ -6,7 +6,7 @@ const client = new ApolloClient({
     uri: "https://alcostal-back.herokuapp.com/graphql",
     cache: new InMemoryCache(),
     headers: {
-        'Authorization':'Bearer 104|y8DTiubIeRo46hSHxwLD8vwL845YOwYLTnjriTBr'
+        'Authorization':'Bearer 174|BDDEhWYvvpolT4WUfPkBoqcDd4mfcWeVeT9Xn2Tr'
     }
 });
 

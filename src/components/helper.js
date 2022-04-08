@@ -3,6 +3,7 @@ export const responsiveNavbar = () => {
     nav.classList.toggle('hidden')
 }
 export const changeNavbackground = () => {
+    console.log(window.scrollY);
     if (window.scrollY >= 30) {
         document.querySelector("#navbar").classList.add("navbar-active");
         document.querySelector("#navbar").classList.remove("navbar-inactive");

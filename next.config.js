@@ -9,6 +9,6 @@ module.exports = withPWA({
     disable: process.env.NODE_ENV === "development",
   },
   images: {
-    domains: ['lh4.googleusercontent.com', 'lh3.googleusercontent.com', 'www.noticiasensalud.com'],
+    domains: ['lh4.googleusercontent.com', 'lh3.googleusercontent.com', 'www.noticiasensalud.com', 'img.lalr.co'],
   },
 });
