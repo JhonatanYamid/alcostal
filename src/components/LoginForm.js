@@ -4,7 +4,7 @@ const LoginForm = () => {
         <>
             <h1 className="text-4xl font-semibold ">Hola!</h1>
             <h2 className='text-sm font-normal px-10 md:px-0 text-center'>Ingresa con tu cuenta de AlCostal para continuar</h2><br />
-            <form className="flex flex-col md:w-1/2 space-y-3" onSubmit={login}>
+            <form className="flex flex-col md:w-1/2 space-y-3">
                 <input type="text" placeholder="Email" name="email" className='input-field' />
                 <input type="password" placeholder="Contraseña" name="password" className='input-field' />
                 <button className="button-primary" type="submit">Ingresar</button>
