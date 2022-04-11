@@ -7,6 +7,7 @@ import Categories from '../components/Categories';
 import FarmSection from "../components/FarmSection";
 
 const Shop = ({ products, farms, categories }) => {
+    console.log(products);
     return (
         <Layout>
             <div className="pt-28 bg-no-repeat bg-top bg-auto bg-[url('/images/bg-section2.png')]">
@@ -26,7 +27,7 @@ const Shop = ({ products, farms, categories }) => {
     );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const { data: products } = await client.query({
         query: gql`
         query products {

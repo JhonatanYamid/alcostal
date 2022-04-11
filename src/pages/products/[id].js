@@ -96,25 +96,7 @@ const Product = ({ products=null }) => {
         </Layout>
     );
 }
-
-export async function getStaticPaths() {
-    const { data: product } = await client.query({
-        query: gql`
-        query products {
-            products{
-                id
-            }
-        }
-    `,
-    });
-    const productJson = product.products;
-    const paths = productJson.map(({ id }) => ({ params: { id: `${id}` } }))
-    return {
-        paths,
-        fallback: false
-    };
-}
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
     const { data: products } = await client.query({
         query: gql` 
         query products {

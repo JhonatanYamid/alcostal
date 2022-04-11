@@ -17,7 +17,7 @@ const Navbar = () => {
     // }, [])
 
     return (
-        <nav className="flex items-center justify-between flex-wrap fixed inset-x-0 md:px-20 navbar-active px-5 z-50" id="navbar">
+        <nav className="flex items-center justify-between flex-wrap fixed inset-x-0 md:px-20 navbar-active px-5 z-50 shadow-xl" id="navbar">
             <Link href="/">
                 <a className="flex mr-8 pt-3" >
                     <Image
