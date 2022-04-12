@@ -52,11 +52,11 @@ const Navbar = () => {
                             INICIO
                         </a>
                     </Link>
-                    {/* <Link href="/shop"> */}
-                        <div className="nav-item" onClick={router.push('/shop')}>
+                    <Link href="/shop">
+                        <a className="nav-item">
                             TIENDA
-                        </div>
-                    {/* </Link> */}
+                        </a>
+                    </Link>
                     <Link href="/about">
                         <a className="nav-item">
                             ACERCA DE
