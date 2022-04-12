@@ -4,7 +4,7 @@ import Link from "next/link";
 const ProductItem = ({ id, title, description, price, category, image, discount }) => {
     price = new Intl.NumberFormat().format(price);
     return (
-        <Link href={`/products/${id}`}>
+        <Link href={`/products/[id]`} as={`/products/${id}`}>
             <a className="w-[49%] md:w-[24%] rounded-xl shadow-xl overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap">
                 {/* Image and discount*/}
                 <div className="relative">

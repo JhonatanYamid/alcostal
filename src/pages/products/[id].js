@@ -13,7 +13,7 @@ const Product = ({ products=null }) => {
                 {/* Slider image */}
                 <div className="flex-row-center h-1/2 w-full md:w-1/2 md:px-10">
                     <div className="w-full bg-slate-200">
-                        <Image src={product.imageProducts[0].url} width={50} height={50} layout="responsive" objectFit="cover" alt="producto" />
+                        <Image src={product.imageProducts[0] ? product.imageProducts[0].url : '/images/without-image.jpg'} width={50} height={50} layout="responsive" objectFit="cover" alt="producto" />
                     </div>
                 </div>
                 {/* Part Information */}
