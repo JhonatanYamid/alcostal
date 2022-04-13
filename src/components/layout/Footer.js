@@ -1,10 +1,11 @@
-import React from 'react'
-
+import {useRouter} from 'next/router'
 const Footer = () => {
+    const router = useRouter();
+    const marginTop= router.pathname === '/' ? '-mt-20 md:-mt-48' : 'mt-10';
     return (
         
-        <div className="-mt-24 md:-mt-48 backgroundSection md:bg-cover justify-center bg-[url('/images/bg-footer.png')]">
-            <div className='w-3/4 md:w-1/2 rounded-xl bg-white flex justify-center px-5 md:px-20 py-10 flex-col text-center'>
+        <div className={marginTop + " backgroundSection md:bg-cover justify-center bg-[url('/images/bg-footer.png')]"}>
+            <div className='w-3/4 md:w-1/2 rounded-xl bg-white flex justify-center px-5 md:px-20 py-10 flex-col text-center shadow-2xl'>
                 <h2 className='font-bold text-2xl text-stone-800'>SIGANOS EN FEISBÚ</h2>
                 <h3 className='text-md pt-5'>Contactenos por cualquiera de las redes sociales de aquí abajo y siganos también...<br />¡Para que no se pierda ni media!</h3>
                 {/* Iconos */}

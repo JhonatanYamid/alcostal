@@ -9,15 +9,15 @@ const Product = ({ products=null }) => {
     const price = new Intl.NumberFormat().format(product.price);
     return (
         <Layout>
-            <div className="flex flex-col md:flex-row items-center h-screen bg-no-repeat bg-top bg-cover bg-[url('/images/bg-section2.png')]">
+            <div className="flex flex-col md:flex-row items-center h-full bg-no-repeat bg-top bg-cover bg-[url('/images/bg-section2.png')] pb-10">
                 {/* Slider image */}
-                <div className="flex-row-center h-1/2 w-full md:w-1/2 md:px-10">
-                    <div className="w-full bg-slate-200">
-                        <Image src={product.imageProducts[0] ? product.imageProducts[0].url : '/images/without-image.jpg'} width={50} height={50} layout="responsive" objectFit="cover" alt="producto" />
+                <div className="flex-row-center h-1/2 w-full md:w-1/2 px-10">
+                    <div className="w-full">
+                        <Image src={product.imageProducts[0] ? product.imageProducts[0].url : '/images/without-image.jpg'} width={50} height={50} className="rounded-xl" layout="responsive" objectFit="cover" alt="producto" />
                     </div>
                 </div>
                 {/* Part Information */}
-                <div className="w-full md:w-1/2 px-8 md:px-10 pt-3 md:pt-10">
+                <div className="w-full md:w-1/2 px-8 md:px-10 pt-10 md:pt-0">
                     <div className="flex-row-center">
                         {/* Information */}
                         <div className="flex-row-center">

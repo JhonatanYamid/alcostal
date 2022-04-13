@@ -1,7 +1,5 @@
 import React from 'react'
 import SearchInput from "../components/SearchInput";
-import Link from "next/link";
-import ItemCategory2 from "../components/ItemCategory2";
 
 const HeaderShop = () => {
     return (

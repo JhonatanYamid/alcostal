@@ -3,7 +3,7 @@ import FarmItem from './FarmItem';
 
 const FarmSection = ({ titleSection, farms }) => {
   return (
-    <div className="px-5 md:px-20">
+    <>
       <h3
         className='text-2xl font-bold mb-5 md:ml-6 text-teal-800'>
         {titleSection}
@@ -17,7 +17,7 @@ const FarmSection = ({ titleSection, farms }) => {
                   />
         ))}
       </div>
-    </div>
+    </>
   );
 }
 

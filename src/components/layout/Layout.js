@@ -3,8 +3,12 @@ import React from 'react'
 import Image from 'next/image';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { useRouter } from 'next/router'
 
 const Layout = props => {
+    const router = useRouter();
+    const paddingTop = router.pathname === '/' ? 'pt-0' : 'pt-28';
+    const showFooter = router.pathname === '/products/[id]' ? 'hidden' : 'block';
     return (
         <>
             <Head>
@@ -13,10 +17,13 @@ const Layout = props => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Navbar />
-            <main>
+            <main className={paddingTop}>
                 {props.children}
             </main>
-            {/* <Footer /> */}
+            <div className={showFooter}>
+                <Footer />
+            </div>
+
         </>
     );
 }

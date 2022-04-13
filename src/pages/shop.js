@@ -10,17 +10,12 @@ const Shop = ({ products, farms, categories }) => {
 
     return (
         <Layout>
-            <div className="pt-28 bg-no-repeat bg-top bg-auto bg-[url('/images/bg-section2.png')]">
+            <div className="bg-no-repeat bg-top bg-auto bg-[url('/images/bg-section2.png')] space-y-10 px-5 md:px-20">
                 <HeaderShop />
-                <br />
                 <Categories categories={categories}/>
-                <br /><br />
                 <FarmSection farms= {farms} titleSection={"Fincas Cercanas"} />
-                <br /><br />
                 <Featured products={products} titleSection="Te puede interesar" />
-                <br />
                 {/* <Featured titleSection = "Destacados"/> */}
-                <br />
                 {/* <FarmSection titleSection={"Fincas Favoritas"} /> */}
             </div>
         </Layout>

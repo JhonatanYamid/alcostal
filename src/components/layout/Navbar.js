@@ -1,21 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 import { responsiveNavbar} from '../helper';
 
 const Navbar = () => {
-
-    // React.useEffect(() => {
-    //     if (router.pathname === '/') {
-    //         window.addEventListener('scroll', (router.pathname === '/') ? changeNavbackground : '');
-    //     }else{
-    //         document.querySelector("#navbar").classList.add("navbar-active");
-    //         document.querySelector("#navbar").classList.add("py-0");
-    //         console.log(router.pathname);
-    //     }
-    // }, [])
-
     return (
         <nav className="flex items-center justify-between flex-wrap fixed inset-x-0 md:px-20 navbar-active px-5 z-50 shadow-xl" id="navbar">
             <Link href="/">
